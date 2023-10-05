@@ -12,30 +12,49 @@
         
         <nav class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container">
+              
                 <button class="navbar-toggler" type="button"
                  data-bs-toggle="collapse"
                  data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="'#" class="navbar-brand "> A-M</a>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a href="'#" class="navbar-brand order-lg-1"> A-M</a>
                 <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ">
-                    <li class="nav-item">
+                    <li class="nav-item d-lg-none">
                         <a href="#" class="nav-link">Inbox</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Compose</a>
+                    <li class="nav-item d-lg-none ">
+                        <a href="#" class="nav-link">
+                          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Reply</button>
+
+                          <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                            <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Text to Audio Reply</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                              <div class="form-outline">
+                                <textarea class="form-control" id="textArea" rows="4"></textarea>
+                                <label class="form-label" for="textarea">Reply</label>
+                              </div>
+                            </div>
+                          </div></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-lg-none">
                         <a href="#" class="nav-link">Account</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-lg-none">
                         <a href="#" class="nav-link">Setting</a>
                     </li>
                 </ul>
-                
-    
+               
             </div>
+            
          </nav>
 
 
@@ -43,90 +62,153 @@
 
 
     
-            <div class= "container-fluid d-flex align-items-start  ">
-                <div class="d-none d-xl-flex row p-5 ">
+            <div class= "container-fluid d-flex align-items-start justify-content-around bg-light" id="container">
+                <div class="d-none d-lg-flex row p-4 ">
                     <div class=" col ">
                       <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Home</a>
-                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                        <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">All Mailboxes</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">NewsLetter</a>
                         <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
-                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Compose</a>
+                        <a class="list-group-item list-group-item-action" id="a" data-bs-toggle="list" href="#ac" role="tab" aria-controls="a">Reply</a>
+                        <a class="list-group-item list-group-item-action" id="b" data-bs-toggle="list" href="#bc" role="tab" aria-controls="b">Profile</a>
+                        <a class="list-group-item list-group-item-action" id="d" data-bs-toggle="list" href="#dc" role="tab" aria-controls="d">Settings</a>
                       </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-3">
                       <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">compose a new audio message</div>
-                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        <div class="tab-pane fade show " id="list-home" role="tabpanel" aria-labelledby="list-home-list">12 new messages (only 4 matter)</div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"> Chris Willamson has a new newsletter about important lifestyle choices</div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"> Competence</div>
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list"></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="tab-pane fade show " id="ac" role="tabpanel" aria-labelledby="a"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Reply 
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="ModalLabel">Text to Audio</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label for="a">Reply</label>
+                                    <input type="email" class="form-control" id="a" placeholder="Enter Reply Here">
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Reply</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div></div>
+                        <div class="tab-pane fade" id="bc" role="tabpanel" aria-labelledby="b">Check or change your profile and Avatar</div>
+                        <div class="tab-pane fade" id="dc" role="tabpanel" aria-labelledby="d">Customer service or profile setting</div>
                       </div>
                     </div>
                   </div>
                 <div class="row">
-
-                    <!-- Column 1  -->
-                    <!-- <div class="d-none d-md-block d-lg-block col-md-4 first-column  bg-dark">asddfgfdad</div> -->
-
-
                     <!-- Column 2 Bitmoji -->
-                    <div class=" col-md-6 col-lg-3 order-md-2 p-2 d-flex justify-content-center ">
-                    <img class=" img-responsive" src="giphy.gif">
+                    <div class=" col-md-6 col-lg-3  offset-lg-1 order-md-2  d-flex align-items-center">
+                    <img class=" img object-fit-sm-contain border rounded" src="giphy.gif">
                         </div>
                          <!-- Column 3 :Emails  -->
-                    <div class="col-md-6 col-lg-9   order-md-1 p-5  "> 
-                        <ul class="list-group list-group p-2 ">
-                        <li class="list-group-item d-flex justify-content-center align-items-center bg-danger">
-                          <div class="ms-2 me-auto">
-                            <div class="fw-bold">Important</div>
-                            Emails from Matt
+                    <div class="col-md-6 col-lg-7   order-md-1  p-4 gy-5" id="Emails"> 
+                      <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item bg-danger">
+                          <h2 class="accordion-header ">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Email From Matt
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Your Project is late and you haven't been showing any progress so your fired!
+                              <br>Get Lost,</br>
+                              Matt
+                            </div>
                           </div>
-                          <span class="badge bg-primary rounded-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                          <div class="ms-2 me-auto">
-                            <div class="fw-bold">Non-urgent</div>
-                            Emails from Kate and others
-                          </div>
-                          <span class="badge bg-primary rounded-pill">6</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                          <div class="ms-2 me-auto">
-                            <div class="fw-bold">Junk Mail</div>
-                            Emails from Jay and others
-                          </div>
-                          <span class="badge bg-primary rounded-pill">4</span></div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="accordion-item bg-success">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              Email from Kate
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"> Dear James,
 
-                    <!-- Replace This with above -->
-                    <!-- <div class="container-fluid">
-                        <div class="d-none d-xl-flex row">
-                            <div class=" col-4">
-                              <div class="list-group" id="list-tab" role="tablist">
-                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Home</a>
-                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
-                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
-                                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
-                              </div>
-                            </div>
-                            <div class="col-8">
-                              <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">words</div>
-                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-                              </div>
-                            </div>
+                              Congratulations. We are so happy to inform you that Equinox will like to extend the offer to you for the position of Software Engineer. After interviewing all the candidates, we found you the most suitable person for the job. You will be working directly under [supervisor name], and we believe that your addition to the team will add great value to the company.
+                              
+                              According to the laws, we would require to check your employment eligibility. I have enclosed a form, which you need to fill in and report to the office on 12/12/24 at 2pm. You can report directly to Me, who will guide you through the training procedure.
+                              
+                              On your first day, the HR team will brief you about the benefits and the insurance claims you can choose from. They will also explain the leave policy, profit-sharing plans, and the norms followed in the office.
+                              
+                              Your salary will be $10,000 per annum, which will be paid monthly and credited to your account by the 7th of every month. I have enclosed the offer letter and the document stating the terms and the conditions. If you accept the offer, you are required to send back the signed copy of the offer letter by [deadline]. The other steps in the hiring procedure will be communicated by me after receiving the signed acceptance letter.
+                              
+                              Please feel free to reach out to me in case you have any other doubts. We look forward to you joining us and making us bigger and better than ever.
+                              
+                              Yours’ sincerely,
+                              
+                              Kate </div>
                           </div>
-                    
-                        </div> -->
-<!-- Audio and Dropdown -->
-                    <div class="col-md-12 order-md-3">
+                        </div>
+                        <div class="accordion-item bg-light">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              Email from Jake
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Where can i learn how to use bootstrap 5?</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item bg-light">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                              Email from Fabian
+                            </button>
+                          </h2>
+                          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"></div>
+                          </div>
+                        </div>
+                        <div class="accordion-item bg-secondary">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                              Email From Joel 
+                            </button>
+                          </h2>
+                          <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"> Bay Valley Tech Module 2 starts on October 30th where we will be learning Javascript.</div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+<!-- Audio  -->
+                    <div class="col-md-12 order-md-3 p-5 d-flex justify-content-end">
                       
-                       cghjhg
+                      <div class="col d-flex justify-content-end align-items-center ">
+                        <div class="display"></div>
+                        <div class="controllers"></div>
                     </div>
+                <script src="vrecorder.js"></script>
+               
+                </div>
                 </div>
             </div>
+           </div>
+          </div>
+          
           
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
